@@ -161,7 +161,7 @@ module Rails
           commands = ["createdb", "--encoding", charset]
           commands << "--username" << username unless username.blank?
           commands << "--owner" << owner unless owner.blank?
-          commands << "--port" << port unless port.blank?
+          commands << "--port" << port.to_s unless port.blank?
           commands << "--host" << host unless host.blank?
           commands << database
           res = system(*commands)

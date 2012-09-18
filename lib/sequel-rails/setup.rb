@@ -16,7 +16,6 @@ module Rails
 
     def self.setup(environment = nil)
       environment ||= Rails.env
-      puts "[sequel-blat] Setting up the #{environment.inspect} environment:"
 
       @@connections ||= {}
       @@connections[environment] ||= ::Sequel.connect({:logger => configuration.logger}.merge(::Rails::Sequel.configuration.environment_for(environment.to_s)))

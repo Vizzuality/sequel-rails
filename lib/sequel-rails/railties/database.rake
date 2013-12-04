@@ -22,6 +22,8 @@ namespace :db do
 
         database.gsub!(/(create_table\(:schema_migrations\) do.+?end)/m, '\1'+"\n\n#{inserts}\n")
 
+        database.gsub!(/\s*change do/, "\n  change do\n    run 'CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"'")
+
         # 1. Fuck arbitrary whitespaces.
         database.gsub!(/\s+$/,"\n")
 

@@ -1,5 +1,7 @@
-0.3.5 - dev
-===========
+0.3.7
+=====
+
+* Make `rake db:schema:dump` load important extension
 
 0.3.4
 =====
